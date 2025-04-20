@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokcheat Srorng - Frontend, Blockchain & Data Analytics Specialist</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+<style>
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+p{
+    color:white;
+}
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    background-color: #f0e6ff;
+    color: #7b3fe4;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #1a202c;
+}
+
+.title {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.skill-tag {
+    border: 1px solid #cbd5e0;
+    color: #4a5568;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #7b3fe4;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: #5a21bb;
+}
+
+.social-link::before {
+    /* font-family: "Font Awesome 6 Free"; */
+    font-weight: 900;
+    margin-right: 6px;
+}
+
+/* About Me Section */
+.about-me {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+}
+
+.about-me h2 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.about-me p {
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.about-me p:last-child {
+    margin-bottom: 0;
+}
+
+.teaching-philosophy {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 16px;
+}
+
+.philosophy-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.philosophy-card {
+    background-color: #8F87F1;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.pencil {
+    background-color: #fff5f5;
+    color: #e53e3e;
+}
+
+.puzzle {
+    background-color: #f0fff4;
+    color: #38a169;
+}
+
+.foundation {
+    background-color: #fffaf0;
+    color: #dd6b20;
+}
+
+.explore {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+
+.philosophy-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #1a202c;
+}
+
+.philosophy-card p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .philosophy-cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .philosophy-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .name {
+        font-size: 24px;
+    }
+    
+    .title {
+        font-size: 16px;
+    }
+    
+    .about-me, .philosophy-card {
+        padding: 24px 20px;
+    }
+    
+}
+
+
+.footer{
+  background-color:#C68EFD;
+  display: flex;
+  padding: 50px 200px 0px 200px;
+  gap: 90px;
+}
+
+.card-footer{
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+}
+
+h3{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.footer-list{
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  list-style-type: none;
+  gap: 20px;  
+  line-height: 45px;
+  font-weight: bold;
+}
+
+.footer-list li a:hover{
+  text-decoration: underline;
+  color: #fff;
+  list-style-type: none;
+}
+
+.footer-list li a{
+  color: rgb(7, 7, 7);;
+} 
+
+.logo-footer{
+  width: 120px;
+  height: 90px;
+}
+
+.footer-text{
+  background-color:#C68EFD ;
+  display: flex;
+  justify-content: center;
+}
+
+.text-footer{
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.footer-list-2 li a{
+  color: rgb(7, 7, 7);;
+}
+
+.footer-list-2 li {
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  gap: 20px;  
+  line-height: 45px;
+  font-weight: bold;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.footer-list-2 li a:hover{
+  text-decoration: underline;
+  color: #fff;
+  list-style-type: none;
+}
+
+/* .logo-istad{
+  width: 50px;
+  height: 50px;
+} */
+
+.card-footer-3{
+  width: 20%;
+}
+
+</style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <img class="logo" src="./image/download.png" alt="logo">
+            </div>
+                <ul class="navbar-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+        </nav>
+    </header>
+    <main class="container">
+        
+        <section class="profile">
+            <div class="profile-image">
+                <img src="./image/photo_2025-04-01_10-00-43.jpg" alt="Sokcheat Srorng">
+            </div>
+            <div class="badge">STUDENT AT STAD</div>
+            <h1 class="name">Chhun Meyling</h1>
+            <p class="title">Frontend, Blockchain & Data Analytics Specialist</p>
+            
+            <div class="skills">
+                <span class="skill-tag">Frontend</span>
+                <span class="skill-tag">Blockchain</span>
+                <span class="skill-tag">Data Analytics</span>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link github"><span><i class="fa-brands fa-github-alt"></i></span> GitHub</a>
+                <a href="#" class="social-link linkedin"><span><i class="fa-brands fa-linkedin"></i></span> LinkedIn</a>
+                <a href="#" class="social-link facebook"> <span><i class="fa-brands fa-facebook-f"></i></span>Facebook</a>
+            </div>
+        </section>
+        
+        
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm Sokcheat, an instructor at STAD specializing in Frontend Development, Blockchain Technology, and Data Analytics. With a passion for teaching and technology, I've created these HTML Mastery Challenges to help students develop genuine coding skills without relying on AI tools or search engines.</p>
+            
+            <p>Throughout my career, I've observed that students who learn to solve problems independently develop stronger foundational skills. These exercises are designed to encourage critical thinking, creativity, and problem-solving skills that are essential for any web developer.</p>
+            
+            <p>My teaching approach emphasizes hands-on learning and practical application. I believe that the best way to learn is by doing, and these challenges provide a structured way to practice HTML skills in meaningful contexts.</p>
+        </section>
+        
+        
+        <section class="teaching-philosophy">
+            <div class="section-header">
+                <h2>Teaching Philosophy</h2>
+                <p class="subtitle">My approach to teaching web development</p>
+            </div>
+            
+            <div class="philosophy-cards">
+                <div class="philosophy-card">
+                    <div class="card-icon pencil">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3 style="color: white">Learn by Doing</h3>
+                    <p style="color:black">Practical exercises that require active problem-solving create deeper understanding than passive learning.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon puzzle">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 style="color: white">Embrace Constraints</h3>
+                    <p style="color:black"> Limitations foster creativity and force you to truly understand the tools at your disposal.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon foundation">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 style="color: white">Build from Fundamentals</h3>
+                    <p style="color:black"> Mastering the basics creates a strong foundation for more advanced concepts in frontend, blockchain, and data analytics.</p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="card-icon explore">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 style="color: white">Encourage Exploration</h3>
+                    <p style="color:black">The best learning happens when students discover solutions through experimentation and critical thinking.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+          <div class="card-footer">
+            <div>
+              <img class="logo-footer" src="./image/download.png" alt="logo" />
+            </div>
+            <p class="card-subtitle">
+              Mastering HTML through practical challenges
+            </p>
+          </div>
+          <div class="card-footer-2">
+            <h3>Explore</h3>
+            <ul class="footer-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="card-footer-3">
+            <h3 class="follow-us">Follow Us</h3>
+            <ul class="footer-list-2">
+              <li>
+                <a href="https://www.facebook.com/ISTAD.Education/"
+                  ><i class="fa-brands fa-facebook"></i> facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ISTAD.Education/"
+                  ><i class="fa-brands fa-github"></i> Github</a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ISTAD.Education/"
+                  ><i class="fa-brands fa-telegram"></i> Telegram</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer-4">
+            <div>
+              <img class="logo-istad" src="./image/logo-white-version.webp" alt="logo" />
+            </div>
+            <p class="card-subtitle">
+              Institute of Science and Technology Advanced Development - ISTAD
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="footer-text">
+          <p class="text-footer">© 2023 HTML Mastery. All rights reserved.</p>
+        </div>
+      </footer>
+  
+</body>
+</html>
